@@ -1,21 +1,24 @@
 version: '3.8'
 
 services:
-  database:
+  bbms-php-sb:
     image: mysql/mysql-server
     command: --default-authentication-plugin=mysql_native_password
-    container_name: database
+    container_name: bbms-php-db
     restart: unless-stopped
+    user: root
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: bbms
+      - MYSQL_USER=bbms
+      - MYSQL_PASSWORD=bbms
+      - MYSQL_DATABASE=bbms
+      - MYSQL_ROOT_PASSWORD=root
     volumes:
       - ./mysql-data:/var/lib/mysql
     ports:
       - '3306:3306'
     
   bbms:
-    container_name: bbms
+    container_name: bbms-php
     build:
       context: ./php
     ports:
@@ -24,4 +27,4 @@ services:
       - ../:/var/www/bbms
       - ../apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
     depends_on:
-      - database
+      - bbms-php-db

@@ -57,10 +57,9 @@
         "post-install-cmd": [
         ],
         "pre-update-cmd": [
-            "php artisan clear-compiled",
-            "php artisan optimize"
         ],
         "post-update-cmd": [
+            "php artisan clear-compiled",
             "php artisan optimize"
         ],
         "post-create-project-cmd": [
@@ -71,7 +70,7 @@
     "config": {
         "preferred-install": "dist",
         "allow-plugins": {
-            "kylekatarnls/update-helper": false
+            "kylekatarnls/update-helper": true
         }
     },
     "minimum-stability": "dev",

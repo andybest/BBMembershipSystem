@@ -54,15 +54,15 @@ return [
 
 		'mysql' => [
 			'driver'    => 'mysql',
-			'host'      => env('DB_HOST', 'localhost'),
+			'host'      => env('DB_HOST', '127.0.0.1'),
 			'database'  => env('DB_DATABASE', 'bbms'),
-			'username'  => env('DB_USERNAME', 'root'),
-			'password'  => env('DB_PASSWORD', ''),
+			'username'  => env('DB_USERNAME', 'bbms'),
+			'password'  => env('DB_PASSWORD', 'bbms'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 			'strict'    => false,
-            'port'      => env('DB_PORT', '13306'),
+            'port'      => env('DB_PORT', '3306'),
 		],
 
 		'pgsql' => [

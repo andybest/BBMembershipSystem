@@ -9,8 +9,10 @@ use Laracasts\Presenter\PresentableTrait;
 use Auth;
 use Hash;
 use Illuminate\Auth\Authenticatable;
+use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 /**
@@ -45,9 +47,9 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
  * @property string      gocardless_setup_id
  * @package BB\Entities
  */
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
+class User extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract {
 
-    use UserRoleTrait, PresentableTrait, Authenticatable, CanResetPassword;
+    use UserRoleTrait, PresentableTrait, Authenticatable, Authorizable, CanResetPassword;
 
 
     /**

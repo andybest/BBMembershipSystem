@@ -1,6 +1,9 @@
 #!/usr/bin/env php
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
@@ -27,7 +30,6 @@ $app = require_once __DIR__.'/bootstrap/app.php';
 | or another output device for the developers. Here goes nothing!
 |
 */
-
 $kernel = $app->make('Illuminate\Contracts\Console\Kernel');
 
 $status = $kernel->handle(

@@ -33,6 +33,7 @@ class Handler extends ExceptionHandler {
 	 */
 	public function report(Exception $e)
 	{
+        echo($e);
         //The parent will log exceptions that aren't of the types above
 		parent::report($e);
 	}

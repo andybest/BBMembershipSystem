@@ -288,6 +288,7 @@ Route::group(array('middleware' => 'role:member'), function() {
 # Settings
 ##########################
 
+// TODO Fix the removal of the name
 Route::post('settings', 'SettingsController@update')->name('settings.update');
 
 

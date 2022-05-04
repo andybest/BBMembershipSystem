@@ -13,7 +13,7 @@ return [
 	|
 	*/
 
-	'debug' => env('APP_DEBUG', false),
+	'debug' => env('APP_DEBUG', true),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -150,6 +150,7 @@ return [
         'BB\Providers\ValidatorServiceProvider',
         'BB\Providers\HtmlServiceProvider',
         \BB\Providers\ObserverServiceProvider::class,
+		\BB\Providers\AuthServiceProvider::class,
 
 
         /*
@@ -190,6 +191,7 @@ return [
         'Eloquent'     => 'Illuminate\Database\Eloquent\Model',
         'Event'        => 'Illuminate\Support\Facades\Event',
         'File'         => 'Illuminate\Support\Facades\File',
+		'Gate'		   => 'Illuminate\Support\Facades\Gate',
         'Hash'         => 'Illuminate\Support\Facades\Hash',
         'Input'        => 'Illuminate\Support\Facades\Input',
         'Inspiring'    => 'Illuminate\Foundation\Inspiring',
