@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateAcsNodeTable extends Migration
+class UpdateAcsNodeTable1 extends Migration
 {
     /**
      * Run the migrations.
